@@ -1,0 +1,68 @@
+camp Tata2016
+
+colorseniors {
+	Nur {
+		year : 2012
+		color : BlueColor
+		inferiors : Timi
+	}
+}
+
+cardseniors {
+	Timi {
+		year : 2014
+		color : BlueColor
+		card : OrangeCard
+		superior : Nur
+		inferiors : Aron, Bazsi, Abus
+	}
+}
+
+roomseniors {
+	Aron {
+		year : 2015
+		color : BlueColor
+		card : OrangeCard
+		superior : Timi
+	}
+	
+	Bazsi {
+		year : 2015
+		color : BlueColor
+		card : OrangeCard
+		superior : Timi
+	}
+	
+	Abus {
+		year : 2015
+		color : BlueColor
+		card : OrangeCard
+		superior : Timi
+	}
+}
+
+colors {
+   Blue {
+    	type : BlueColor
+    	colorsenior : Nur
+    	cards {
+    		orange {
+    			type : OrangeCard
+    			cardsenior : Timi
+    			rooms {
+    				firstBlue {
+    					roomsenior : Aron
+    				}
+    				
+    				secondBlue {
+    					roomsenior : Bazsi
+    				}
+    				
+    				thirdBlue {
+    					roomsenior : Abus
+    				}
+    			}
+    		}
+    	}
+    }
+}
