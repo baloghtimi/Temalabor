@@ -3,6 +3,7 @@
 package FreshmanCamp.freshmanCamp.presentation;
 
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -21,7 +22,7 @@ import org.eclipse.emf.ecore.EClassifier;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
+import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import org.eclipse.emf.ecore.EObject;
@@ -234,10 +235,18 @@ public class FreshmanCampModelWizard extends Wizard implements INewWizard {
 							// Create a resource set
 							//
 							ResourceSet resourceSet = new ResourceSetImpl();
+							
+							resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
+							(Resource.Factory.Registry.DEFAULT_EXTENSION, new Resource.Factory() {
+								@Override
+								public Resource createResource(URI uri) {
+									return new BinaryResourceImpl(uri);
+								}
+							});
 
 							// Get the URI of the model file.
 							//
-							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+							URI fileURI = URI.createFileURI(new File("myFreshmanCamp.bin").getAbsolutePath());
 
 							// Create a resource for this file.
 							//
@@ -392,8 +401,7 @@ public class FreshmanCampModelWizard extends Wizard implements INewWizard {
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE);
-			{
+			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;

@@ -1,0 +1,112 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+Camp :
+	'camp' name=ID
+	'colorseniors' '{'
+	    colorseniors+=ColorSenior*
+	'}'
+	'cardseniors' '{'
+	    cardseniors+=CardSenior*
+	'}'
+	'roomseniors' '{'
+	    roomseniors+=RoomSenior*
+	'}'
+	'colors' '{'
+	    colors+=Color*
+	'}'
+;
+
+Freshman :
+	name=Name '{'
+	    'neptun' ':' neptun=STRING 
+	    'color' ':' color=ColorType
+	    'card' ':' card=CardType
+	'}'
+;
+
+ColorSenior :
+	name=Name '{'
+	    //'school' ':' school=STRING
+	    'year' ':' year=INT
+	    'color' ':' color=ColorType
+	    'inferiors' ':' inferiors+=[CardSenior|Name] (',' inferiors+=[CardSenior|Name])*
+	'}'
+;
+
+CardSenior :
+	name=Name '{'
+	    //'school' ':' school=STRING
+	    'year' ':' year=INT
+	    'color' ':' color=ColorType
+	    'card' ':' card=CardType
+	    'superior' ':' superior+=[ColorSenior|Name]
+	    'inferiors' ':' inferiors+=[RoomSenior|Name] (',' inferiors+=[RoomSenior|Name])*
+	'}'
+;
+
+RoomSenior :
+	name=Name '{'
+	    //'school' ':' school=STRING
+	    'year' ':' year=INT
+	    'color' ':' color=ColorType
+	    'card' ':' card=CardType
+	    'superior' ':' superior+=[CardSenior|Name]
+	'}'
+;
+
+OperativeOrganizer :
+	name=Name '{'
+	    //'school' ':' school=STRING
+	    'year' ':' year=INT
+	    'color' ':' color=ColorType
+	    'superior' ':' superior+=[OperativeOrganizer|Name]
+	    'inferiors' ':' inferiors+=[OperativeOrganizer|Name] (',' inferiors+=[OperativeOrganizer|Name])*
+	'}'
+;
+
+Color :
+	name=Name '{'
+	    'type' ':' type=ColorType
+	    'colorsenior' ':' colorsenior+=[ColorSenior|Name]
+	    'cards' '{'
+	        cards+=Card*
+	    '}'
+	'}'
+;
+
+Card :
+	name=Name '{'
+	    'type' ':' type=CardType
+	    'cardsenior' ':' cardsenior+=[CardSenior|Name]
+	    'rooms' '{'
+	        rooms+=Room*
+	    '}'
+	'}'
+;
+
+Room :
+	name=Name '{'
+	    'roomsenior' ':' roomsenior+=[RoomSenior|Name]
+	    /*'freshmen' '{'
+	        freshmen+=Freshman*
+	    '}'*/
+	'}' 
+;
+
+Name :
+	ID (ID)*;
+
+enum ColorType :
+	BlackColor= 'BlackColor' |
+	BlueColor= 'BlueColor' |
+	RedColor= 'RedColor' |
+	WhiteColor= 'WhiteColor' |
+	YellowColor= 'YellowColor' ;
+
+enum CardType :
+	BlueColor= 'BlueCard' |
+	GreenColor= 'GreenCard' |
+	OrangeColor= 'OrangeCard' |
+	YellowColor= 'YellowCard' ;
