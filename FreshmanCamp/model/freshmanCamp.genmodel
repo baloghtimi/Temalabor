@@ -4,7 +4,7 @@
     modelName="FreshmanCamp" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" copyrightFields="false" importOrganizing="true">
   <foreignModel>freshmanCamp.ecore</foreignModel>
-  <genPackages prefix="FreshmanCamp" basePackage="FreshmanCamp" disposableProviderFactory="true"
+  <genPackages prefix="FreshmanCamp" basePackage="FreshmanCamp" resource="XMI" disposableProviderFactory="true"
       ecorePackage="freshmanCamp.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="freshmanCamp.ecore#//ColorType">
       <genEnumLiterals ecoreEnumLiteral="freshmanCamp.ecore#//ColorType/BlackColor"/>
