@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webpage:Web xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:webpage="http://www.example.org/webpage" xmi:id="_fwMXELlQEeaXGtooIUZpTw">
+  <pages xmi:id="_yipJcLlQEea8y82UIPs2EA" name="EMF Article" title="Reindeer" description="EMF Article about modeling">
+    <category xmi:id="_NKR8ILlhEea8y82UIPs2EA" name="Rod"/>
+    <category xmi:id="_NjEPkLlhEea8y82UIPs2EA" name="Chocolate"/>
+    <category xmi:id="_zkox8LlQEea8y82UIPs2EA" name="Ho-ho-ho">
+      <article xmi:id="_1CZJYLlQEea8y82UIPs2EA" name="Santa Claus"/>
+    </category>
+  </pages>
+</webpage:Web>
