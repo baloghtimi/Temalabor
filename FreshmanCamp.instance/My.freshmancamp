@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<freshmanCamp:Camp xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:freshmanCamp="http://www.example.org/freshmanCamp" name="BME-VIK Gólyatábor" location="Tata, Hungary">
+  <colors type="BlueColor" colorsenior="//@participants.0">
+    <cards cardsenior="//@participants.1">
+      <rooms name="Nova" roomsenior="//@participants.5"/>
+      <rooms name="Pepe" roomsenior="//@participants.6"/>
+      <rooms name="Leslie" roomsenior="//@participants.7"/>
+    </cards>
+    <cards type="GreenCard" cardsenior="//@participants.2">
+      <rooms name="Attiss" roomsenior="//@participants.8"/>
+      <rooms name="Ombi" roomsenior="//@participants.9"/>
+      <rooms name="Marci" roomsenior="//@participants.10"/>
+    </cards>
+    <cards type="OrangeCard" cardsenior="//@participants.3">
+      <rooms name="Aron" roomsenior="//@participants.11"/>
+      <rooms name="Bazsi" roomsenior="//@participants.12"/>
+      <rooms name="Abus" roomsenior="//@participants.13"/>
+    </cards>
+    <cards type="YellowCard" cardsenior="//@participants.4">
+      <rooms name="Szlotta" roomsenior="//@participants.14"/>
+      <rooms name="Dotty" roomsenior="//@participants.15"/>
+      <rooms name="Bali" roomsenior="//@participants.16"/>
+    </cards>
+  </colors>
+  <participants xsi:type="freshmanCamp:ColorSenior" name="nur" color="BlueColor" inferiors="//@participants.1 //@participants.2 //@participants.3 //@participants.4"/>
+  <participants xsi:type="freshmanCamp:CardSenior" name="Karesz" color="BlueColor" inferiors="//@participants.5 //@participants.6 //@participants.7" superior="//@participants.0"/>
+  <participants xsi:type="freshmanCamp:CardSenior" name="Luca" color="BlueColor" card="GreenCard" inferiors="//@participants.8 //@participants.9 //@participants.10" superior="//@participants.0"/>
+  <participants xsi:type="freshmanCamp:CardSenior" name="Timi" color="BlueColor" card="OrangeCard" inferiors="//@participants.11 //@participants.12 //@participants.13" superior="//@participants.0"/>
+  <participants xsi:type="freshmanCamp:CardSenior" name="Kitty" color="BlueColor" school="" card="YellowCard" inferiors="//@participants.14 //@participants.15 //@participants.16" superior="//@participants.0"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Nova" color="BlueColor" superior="//@participants.1"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Pepe" color="BlueColor" superior="//@participants.1"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Leslie" color="BlueColor" superior="//@participants.1"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Attiss" color="BlueColor" card="GreenCard" superior="//@participants.2"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Ombi" color="BlueColor" card="GreenCard" superior="//@participants.2"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Marci" color="BlueColor" card="GreenCard" superior="//@participants.2"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Aron" color="BlueColor" card="OrangeCard" superior="//@participants.3"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Bazsi" color="BlueColor" card="OrangeCard" superior="//@participants.3"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Abus" color="BlueColor" card="OrangeCard" superior="//@participants.3"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Szlotta" color="BlueColor" card="YellowCard" superior="//@participants.4"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Dotty" color="BlueColor" card="OrangeCard" superior="//@participants.4"/>
+  <participants xsi:type="freshmanCamp:RoomSenior" name="Bali" color="BlueColor" card="YellowCard" superior="//@participants.4"/>
+</freshmanCamp:Camp>
